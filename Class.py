@@ -1,4 +1,25 @@
+
+from tkinter import*
+
+Wn=Tk()
+Wn.title("Login")
+Wn.geometry("500x500")
+Wn.bg("Light gray")
+
+
+
+def Login():
+    Username = input("Enter Username: ")
+    Password = input("Enter Username: ")
+    if Username == "MrLeeman":
+        if Password == "MrLeeman":
+           return True
+    else:
+        print("Wrong Username Or Password")
+        return Login()
+
 from faker import Faker
+
 
 
 
@@ -50,6 +71,7 @@ def PrintStudent(Student):
         print("ID: {} Forename: {} Surname: {} Number: {} Address: {}".format(*Student))
 
 def Menu():
+    IsLogin = Login()
     Students = GetStudents()
     while True:
         Selection = int(input("Select Option \n\n"
@@ -86,6 +108,3 @@ def MakeFaker(Number):
 
     SaveStudents(Students)
 
-MakeFaker(10000)
-
-# Menu()
