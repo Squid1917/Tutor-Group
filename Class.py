@@ -1,3 +1,4 @@
+
 from tkinter import*
 
 Wn=Tk()
@@ -16,6 +17,14 @@ def Login():
     else:
         print("Wrong Username Or Password")
         return Login()
+
+from faker import Faker
+
+
+
+
+
+
 
 def CheckInput(Message):
     Choice = input(Message).upper()
@@ -83,6 +92,19 @@ def Menu():
         elif Selection == 5:
             exit()
         
+def MakeFaker(Number):
+    fake = Faker()
 
+    Students = []
 
-#Menu()
+    for ID in range(Number):
+        FullName = fake.name()
+        Forename = FullName.split(" ")[0]
+        Surname = FullName.split(" ")[1]
+        Number = fake.phone_number()
+        Address = fake.street_address()    
+        Data = [ID,Forename,Surname,Number,Address]
+        Students.append(Data)
+
+    SaveStudents(Students)
+
