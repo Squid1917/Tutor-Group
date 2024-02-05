@@ -1,3 +1,15 @@
+
+
+def Login():
+    Username = input("Enter Username: ")
+    Password = input("Enter Username: ")
+    if Username == "MrLeeman":
+        if Password == "MrLeeman":
+            return True
+    else:
+        print("Wrong Username Or Password")
+        return Login()
+
 def CheckInput(Message):
     Choice = input(Message).upper()
     if Choice == "Y":
@@ -16,7 +28,6 @@ def GetStudents():
         del TempData[-1]
         Data.append(TempData)
     return Data
-
 
 def SaveStudents(Students):
     CSV = open("Class.csv","w")
@@ -43,6 +54,7 @@ def PrintStudent(Student):
         print("ID: {} Forename: {} Surname: {} Number: {} Address: {}".format(*Student))
 
 def Menu():
+    Login()
     Students = GetStudents()
     while True:
         Selection = int(input("Select Option \n\n"
