@@ -1,3 +1,10 @@
+from tkinter import*
+
+Wn=Tk()
+Wn.title("Login")
+Wn.geometry("500x500")
+Wn.bg("Light gray")
+
 
 
 def Login():
@@ -5,7 +12,7 @@ def Login():
     Password = input("Enter Username: ")
     if Username == "MrLeeman":
         if Password == "MrLeeman":
-            return True
+           return True
     else:
         print("Wrong Username Or Password")
         return Login()
@@ -28,6 +35,7 @@ def GetStudents():
         del TempData[-1]
         Data.append(TempData)
     return Data
+
 
 def SaveStudents(Students):
     CSV = open("Class.csv","w")
@@ -54,7 +62,7 @@ def PrintStudent(Student):
         print("ID: {} Forename: {} Surname: {} Number: {} Address: {}".format(*Student))
 
 def Menu():
-    Login()
+    IsLogin = Login()
     Students = GetStudents()
     while True:
         Selection = int(input("Select Option \n\n"
@@ -77,4 +85,4 @@ def Menu():
         
 
 
-Menu()
+#Menu()
