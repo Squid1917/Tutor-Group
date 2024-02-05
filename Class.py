@@ -2,9 +2,18 @@ from tkinter import*
 
 Wn=Tk()
 Wn.title("Login")
-Wn.geometry("500x500")
-Wn.bg("Light gray")
+Wn.geometry("500x150")
 
+
+Username = Entry(Wn, textvariable="User", font=("Arial", 15))
+Username.place(x=145, y=40)
+Password = Entry(Wn, textvariable="User", font=("Arial", 15))
+Password.place(x=145, y=110)
+
+user = Label(Wn, text="Username", font=("Arial", 20))
+user.place(x=145, y=0)
+Pass = Label(Wn, text="Password", font=("Arial", 20))
+Pass.place(x=145, y=70)
 
 
 def Login():
